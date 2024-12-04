@@ -12,24 +12,41 @@ let randomword;
 switch( randomnumber ){ 
     
     case 1:
-        randomword = "Piedra";    
+        randomword = "piedra";    
     break;
 
     case 2:
-        randomword ="Papel";    
+        randomword ="papel";    
     break;
 
     case 3: 
-        randomword = "Tijera";    
+        randomword = "tijera";    
     break;
 }
 
 console.log( randomword);
 
-
+//FUNCION QUE GUARDA LA ELECCION DEL JUGADOR
 let answerHuman;
 getHumanChoice = () =>{ 
-    return answerHuman = prompt("¿Piedra, Papel o Tijeras?");
+     answerHuman = prompt("¿Piedra, Papel o Tijeras?");
+     return answerHuman.toLowerCase();  //HACEMOS QUE LA OPCION HUMANA NO DISTINGA ENTRE
+                                        //MAYUSCULAS O MINUSCULAS
+}
+console.log(getHumanChoice());
+
+
+
+let ComputerScore = 0;
+let HumanScore = 0;
+
+
+
+PlayRound = (humanchoice, computerchoice) =>{ 
+
 }
 
-console.log(getHumanChoice());
+//const humanSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
+
+//PlayRound(humanSelection, computerSelection);
