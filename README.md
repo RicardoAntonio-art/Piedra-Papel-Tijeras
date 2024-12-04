@@ -1,1 +1,2 @@
 # Piedra-Papel-Tijeras
+Este es el primer Proyecto ed JS en The Odin Project, en este proyecto debo mostrar una compresion básicas de los fundamentos básicos de JS, creando un juego que se juega directamente en la consola del navegador.
