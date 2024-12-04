@@ -35,17 +35,35 @@ getHumanChoice = () => {
 let ComputerScore = 0;
 let HumanScore = 0;
 
+/*
+PlayGame () =>{ 
+    
+}
+*/
 
 
 PlayRound = (humanchoice, computerchoice) =>{ 
     console.log( "El humano escogio " + humanchoice + " y la maquina " + computerchoice);
-    
-    if( humanchoice === "tijera" && computerchoice === "papel"){         
+
+    if( humanchoice === "piedra" && computerchoice === "papel"){         
+        ComputerScore++;
+        console.log("La maquina gana!");
+        console.log("Puntuacion de la Maquina: " + ComputerScore);
+        console.log("Puntuacion del humano: "+ HumanScore);
+
+    } else if ( humanchoice === "papel" && computerchoice === "tijera"){
+        ComputerScore++;
+        console.log("La maquina gana! su puntuacion es de: " + ComputerScore);
+        console.log("Puntuacion de la Maquina: " + ComputerScore);
+    } else if ( humanchoice === "tijera" && computerchoice === "piedra"){ 
+        ComputerScore++;
+        console.log("La maquina gana! su puntuacion es de: " + ComputerScore);
+        console.log("Puntuacion de la Maquina: " + ComputerScore);
+    } else {
         HumanScore++;
         console.log("El humano gana! su puntuacion es de: " + HumanScore);
-    } else { 
-        console.log("No paso nada");
-    } 
+        console.log("Puntuacion de la Maquina: " + ComputerScore);
+    }
 }
 
 
