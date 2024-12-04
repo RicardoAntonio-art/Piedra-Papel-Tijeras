@@ -24,29 +24,33 @@ switch( randomnumber ){
     break;
 }
 
-console.log( randomword);
-
 //FUNCION QUE GUARDA LA ELECCION DEL JUGADOR
 let answerHuman;
-getHumanChoice = () =>{ 
+getHumanChoice = () => { 
      answerHuman = prompt("¿Piedra, Papel o Tijeras?");
      return answerHuman.toLowerCase();  //HACEMOS QUE LA OPCION HUMANA NO DISTINGA ENTRE
                                         //MAYUSCULAS O MINUSCULAS
 }
-console.log(getHumanChoice());
-
-
-
+//ESTE ES EL INICIO DE UNA SOLA RONDA
 let ComputerScore = 0;
 let HumanScore = 0;
 
 
 
 PlayRound = (humanchoice, computerchoice) =>{ 
-
+    console.log( "El humano escogio " + humanchoice + " y la maquina " + computerchoice);
+    
+    if( humanchoice === "tijera" && computerchoice === "papel"){         
+        HumanScore++;
+        console.log("El humano gana! su puntuacion es de: " + HumanScore);
+    } else { 
+        console.log("No paso nada");
+    } 
 }
 
-//const humanSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
 
-//PlayRound(humanSelection, computerSelection);
+const humanSelection = getHumanChoice();
+const computerSelection = randomword;
+
+PlayRound(humanSelection, computerSelection);
+
