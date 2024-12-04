@@ -32,43 +32,58 @@ getHumanChoice = () => {
                                         //MAYUSCULAS O MINUSCULAS
 }
 //ESTE ES EL INICIO DE UNA SOLA RONDA
+
 let ComputerScore = 0;
 let HumanScore = 0;
 
-/*
-PlayGame () =>{ 
+PlayGame = ()=> {
+   
+    PlayRound = (humanchoice, computerchoice) =>{ 
+        console.log( "El humano escogio " + humanchoice + " y la maquina " + computerchoice);
     
-}
-*/
-
-
-PlayRound = (humanchoice, computerchoice) =>{ 
-    console.log( "El humano escogio " + humanchoice + " y la maquina " + computerchoice);
-
-    if( humanchoice === "piedra" && computerchoice === "papel"){         
-        ComputerScore++;
-        console.log("La maquina gana!");
-        console.log("Puntuacion de la Maquina: " + ComputerScore);
-        console.log("Puntuacion del humano: "+ HumanScore);
-
-    } else if ( humanchoice === "papel" && computerchoice === "tijera"){
-        ComputerScore++;
-        console.log("La maquina gana! su puntuacion es de: " + ComputerScore);
-        console.log("Puntuacion de la Maquina: " + ComputerScore);
-    } else if ( humanchoice === "tijera" && computerchoice === "piedra"){ 
-        ComputerScore++;
-        console.log("La maquina gana! su puntuacion es de: " + ComputerScore);
-        console.log("Puntuacion de la Maquina: " + ComputerScore);
-    } else {
-        HumanScore++;
-        console.log("El humano gana! su puntuacion es de: " + HumanScore);
-        console.log("Puntuacion de la Maquina: " + ComputerScore);
+        if( humanchoice === "piedra" && computerchoice === "papel"){         
+            ComputerScore++;
+            console.log("La maquina gana!");
+            console.log("Puntuacion de la Maquina: " + ComputerScore);
+            console.log("Puntuacion del humano: "+ HumanScore);
+    
+        } else if ( humanchoice === "papel" && computerchoice === "tijera"){
+            ComputerScore++;
+            console.log("La maquina gana! su puntuacion es de: " + ComputerScore);
+            console.log("Puntuacion del humano: " + ComputerScore);
+        } else if ( humanchoice === "tijera" && computerchoice === "piedra"){ 
+            ComputerScore++;
+            console.log("La maquina gana! su puntuacion es de: " + ComputerScore);
+            console.log("Puntuacion del humano: " + HumanScore);
+        }else if ( humanchoice === computerchoice){ 
+            console.log("Es un empate");
+        }
+         else {
+            HumanScore++;
+            console.log("El humano gana! su puntuacion es de: " + HumanScore);
+            console.log("Puntuacion de la Maquina: " + ComputerScore);
+        }
     }
+    
+    const humanSelection = getHumanChoice();
+    const computerSelection = randomword;
+   
+    PlayRound(humanSelection, computerSelection);
+   
 }
 
+PlayGame();
+PlayGame();
+PlayGame();
+PlayGame();
+PlayGame();
 
-const humanSelection = getHumanChoice();
-const computerSelection = randomword;
-
-PlayRound(humanSelection, computerSelection);
+//COMPARAMOS LAS PUNTUACIONES FINALES
+if( ComputerScore > HumanScore ){ 
+    console.log("La maquina gana la partida!");
+} else if ( HumanScore > ComputerScore){
+    console.log("El Humano Gano la partida");
+}else{ 
+    console.log("FUE UN EMPATE");
+}
 
