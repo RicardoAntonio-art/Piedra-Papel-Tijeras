@@ -26,25 +26,30 @@ switch( randomnumber ){
 
 //BLOQUE QUE GUARDA LA ELECCION DEL JUGADOR
 
+let prueba = 12;
+
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
 const btn3 = document.querySelector("#btn3");
-
+const cont = document.querySelector("#container");
+const result1 = document.createElement("p");
+const result2 = document.createElement("p");
+const winner = document.createElement("h1");
 
 
     btn1.addEventListener("click",  () => {   
           humanSelection = "piedra";
-          PlayRound(humanSelection, computerSelection);
+          PlayRound(humanSelection, computerSelection);                
     });   
 
     btn2.addEventListener("click",  () => {   
         humanSelection = "papel";
-        PlayRound(humanSelection, computerSelection);
+        //PlayRound(humanSelection, computerSelection);
   });
 
   btn3.addEventListener("click",  () => {   
     humanSelection = "tijera";
-    PlayRound(humanSelection, computerSelection);
+    //PlayRound(humanSelection, computerSelection);
 });
 /*
     btn2.addEventListener("click", () => {   
@@ -56,12 +61,12 @@ const btn3 = document.querySelector("#btn3");
         humanSelection = btn3.textContent; 
         console.log(getHumanChoice );      
     }); 
+
+
+
+
+
 */
-
-
-
-
-
 var humanSelection;
 const computerSelection = computerChoice;
 
@@ -75,9 +80,12 @@ PlayRound = (humanchoice, computerchoice) =>{
 
     if( humanchoice === "piedra" && computerchoice === "papel"){         
         ComputerScore++;
-        console.log("La maquina gana!");
-        console.log("Puntuacion de la Maquina: " + ComputerScore);
-        console.log("Puntuacion del humano: "+ HumanScore);
+        winner.textContent = "La maquina gana!";
+        result1.textContent = "Puntuacion de la Maquina: " + ComputerScore;
+        result2.textContent = "Puntuacion del humano: "+ HumanScore;
+        cont.appendChild(winner);
+        cont.appendChild(result1);
+        cont.appendChild(result2);
 
     } else if ( humanchoice === "papel" && computerchoice === "tijera"){
         ComputerScore++;
@@ -97,7 +105,7 @@ PlayRound = (humanchoice, computerchoice) =>{
     }
 }
 
-/*
+
 /*
 PlayGame = ()=> {
    
